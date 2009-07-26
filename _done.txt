@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+--TODO
+
+EFile.fnmatch ‚ð‚Â‚©‚¤
+EFile::ALT_SEPARATOR,File::SEPARATOR ‚ð‚Â‚©‚¤
+
