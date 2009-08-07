@@ -1,0 +1,13 @@
+#このファイルは削除しないで下さい。
+
+#HISTORY "MakeShortcut.ini"
+
+--2009/08/02
+
+● ログ管理開始
+
+--TODO
+
+・File.fnmatch をつかう
+・File::ALT_SEPARATOR,File::SEPARATOR をつかう
+
