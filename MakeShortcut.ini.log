@@ -10,8 +10,14 @@
 
 ● オプション「-w @」を指定してのフォルダへのショートカット作成時に、作業フォルダにそのフォルダの一つ上の階層のフォルダがセットされてしまうのを修正
 
---TODO
+--2009/10/23(金)
 
-・File.fnmatch をつかう
-・File::ALT_SEPARATOR,File::SEPARATOR をつかう
+● File::ALT_SEPARATOR,File::SEPARATOR を使うよう変更
+(v1.01)
+
+
+
+
+
+--TODO
 
