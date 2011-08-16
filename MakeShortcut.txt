@@ -132,9 +132,9 @@
 	このプログラムの本体は、Rubyスクリプトです。
 	Ruby : http://www.ruby-lang.org/
 
-	スクリプトの実行を容易にするため、wrapexecを同梱しています。
-	同梱に際して、MakeShortcut.exe と名前を変更しています。
-	wrapexec : http://sourceforge.jp/projects/wrapexec/
+	スクリプトの実行を容易にするため、winshebangを使用しています。
+	それに際して、MakeShortcut.exe と名前を変更しています。
+	wrapexec : http://sourceforge.jp/projects/winshebang/
 
 
 ・著作権表示およびライセンス
@@ -173,7 +173,9 @@
 	　作業フォルダにそのフォルダの一つ上の階層のフォルダがセットされて
 	　しまうのを修正。(2009/10/23 version 1.01)
 
-	・wrapexecではなく、winshebangを使うようにした。(2011/08/13)
+	・wrapexecではなく、winshebangを使うようにした。
+	　(2011/08/16 version 1.02)
+
 
 --------
                                             制作・著作

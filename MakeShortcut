@@ -11,7 +11,7 @@ require 'optparse'
 require 'win32ole'
 
 ProgName = 'MakeShortcut'
-Version = '1.01'
+Version = '1.02'
 
 class String
 	def enc()
