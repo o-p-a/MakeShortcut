@@ -195,42 +195,42 @@ def make_shortcut(filename)
 	end
 end
 
-def main()
+def main(av)
 	var_init()
 
-	ARGV.size.times { |i|
-		ARGV[i] = ARGV[i].enc()
-	}
+	av.size.times do |i|
+		av[i] = av[i].enc()
+	end
 
-	ARGV.options { |opt|
+	av.options do |opt|
 		opt.banner = "Usage: #{ProgName} [options] file..."
 
 		opt.on('-a', '--Arguments=arg', String,
-			'パラメータ') { |v|
+			'パラメータ') do |v|
 			$Arguments = v.dec()
-		}
+		end
 		opt.on('-d', '--Description=text', String,
-			'コメント') { |v|
+			'コメント') do |v|
 			$Description = v.dec()
-		}
+		end
 		opt.on('-h', '--HotKey=key', String, /(\w|\+)+/,
-			'ショートカットキー') { |v|
+			'ショートカットキー') do |v|
 			$HotKey = v[0].dec()
-		}
+		end
 		opt.on('-i', '--IconLocation=filename', String,
-			'アイコン') { |v|
+			'アイコン') do |v|
 			$IconLocation = v.dec()
-		}
+		end
 		opt.on('-t', '--TargetPath=filename', String,
-			'リンク先') { |v|
+			'リンク先') do |v|
 			$TargetPath = v.dec()
-		}
+		end
 		opt.on('-u', '--Update', TrueClass,
-			'新規作成ではなく更新を行う') { |v|
+			'新規作成ではなく更新を行う') do |v|
 			$Update = v
-		}
+		end
 		opt.on('-s', '--WindowStyle=style', String, /Normal|Maximize|Minimize/i,
-			'実行時の大きさ(Normal|Maximize|Minimize)') { |v|
+			'実行時の大きさ(Normal|Maximize|Minimize)') do |v|
 			case v
 			  when /Normal/i
 				$WindowStyle = 1
@@ -239,28 +239,28 @@ def main()
 			  when /Minimize/i
 				$WindowStyle = 7
 			end
-		}
+		end
 		opt.on('-w', '--WorkingDirectory=dir', String,
-			'作業フォルダ') { |v|
+			'作業フォルダ') do |v|
 			$WorkingDirectory = v.dec()
-		}
+		end
 		opt.on('-y', '--Type=type', String, /\.?(lnk|url)/i,
-			'ショートカットの種類(.lnk|.url)') { |v|
+			'ショートカットの種類(.lnk|.url)') do |v|
 			case v[0]
 			  when /\.?lnk/i
 				$Type = '.lnk'
 			  when /\.?url/i
 				$Type = '.url'
 			end
-		}
+		end
 
 		opt.parse!
-		opt.parse('--help') if ARGV.size == 0
-	}
+		opt.parse('--help') if av.size == 0
+	end
 
-	ARGV.each { |a| make_shortcut(a.dec()) }
+	av.each do |a| make_shortcut(a.dec()) end
 
 	return 0
 end
 
-exit main()
+exit main(ARGV)
